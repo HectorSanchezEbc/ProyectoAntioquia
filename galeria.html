@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIOQUIA - Galería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            background-color: white;
+            padding: 15px 10px;
+            border-bottom: 3px solid orange;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 120px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin: 0;
+            color: #666;
+        }
+        
+        /* ========== NAVEGACIÓN ========== */
+        nav {
+            background-color: lightgray;
+            padding: 10px 5px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover {
+            color: white;
+            background-color: orange;
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        main {
+            padding: 20px 15px;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .destacado {
+            background-color: orange;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* ========== FOTOS ========== */
+        .foto {
+            border: 3px solid orange;
+            padding: 20px 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+            min-height: 180px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .foto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+            border-color: darkorange;
+        }
+        
+        .foto h3 {
+            color: orange;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .foto p {
+            color: #666;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .foto p strong {
+            color: #222;
+            font-size: 1.1rem;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Emoji grande */
+        .foto h3::before {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            color: orange;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* ========== GRID RESPONSIVE ========== */
+        .gallery-grid {
+            margin-top: 30px;
+        }
+
+        /* ========== MEDIA QUERIES ========== */
+        
+        /* Tablets y móviles grandes (hasta 768px) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            main {
+                padding: 15px 12px;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            .destacado {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            .foto {
+                padding: 18px 12px;
+                min-height: 160px;
+                margin-bottom: 18px;
+            }
+
+            .foto h3 {
+                font-size: 1.1rem;
+            }
+
+            .foto p {
+                font-size: 0.9rem;
+            }
+
+            .foto p strong {
+                font-size: 1.05rem;
+            }
+
+            footer h3 {
+                font-size: 1.2rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Móviles pequeños (hasta 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 8px;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            nav {
+                padding: 6px 3px;
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 6px 8px;
+            }
+
+            main {
+                padding: 12px 10px;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+            }
+
+            .destacado {
+                font-size: 0.95rem;
+                padding: 10px;
+                margin: 15px 0;
+            }
+
+            .gallery-grid {
+                margin-top: 20px;
+            }
+
+            .foto {
+                padding: 15px 10px;
+                min-height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .foto h3 {
+                font-size: 1rem;
+                margin: 8px 0;
+            }
+
+            .foto h3::before {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+
+            .foto p {
+                font-size: 0.85rem;
+                margin: 6px 0;
+            }
+
+            .foto p strong {
+                font-size: 1rem;
+                margin-top: 8px;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+
+            footer h3 {
+                font-size: 1.1rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Móviles muy pequeños (hasta 360px) */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 70px;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+                padding: 5px 6px;
+            }
+
+            main h2 {
+                font-size: 1.2rem;
+            }
+
+            .destacado {
+                font-size: 0.9rem;
+            }
+
+            .foto {
+                padding: 12px 8px;
+                min-height: 140px;
+            }
+
+            .foto h3 {
+                font-size: 0.95rem;
+            }
+
+            .foto h3::before {
+                font-size: 1.6rem;
+            }
+
+            .foto p {
+                font-size: 0.8rem;
+            }
+
+            .foto p strong {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Ajustes para grid de Bootstrap en móvil */
+        @media (max-width: 576px) {
+            .col-12 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img src="Logoantioquia.jpg" alt="Logo ANTIOQUIA" class="logo">
+                    <h1>ANTIOQUIA</h1>
+                    <p>Asado al Barril</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html">Menú</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    
+    <main class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Galería de Platillos</h2>
+                <div class="destacado">
+                    Sin Chicharrón no hay paraíso
+                </div>
+            </div>
+        </div>
+        
+        <div class="row gallery-grid">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🥓 Chicharrón de Barril</h3>
+                    <p>Nuestra especialidad colombiana</p>
+                    <p><strong>Desde $210</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🍖 Costilla Asada</h3>
+                    <p>Jugosa costilla de cerdo</p>
+                    <p><strong>Desde $175</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🌭 Chorizo Almendrado</h3>
+                    <p>Chorizo artesanal con almendras</p>
+                    <p><strong>Desde $110</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🌮 Tacos Especiales</h3>
+                    <p>Orden de 3 con guacamole</p>
+                    <p><strong>$160</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🍽️ Charola Familiar</h3>
+                    <p>Para 4 personas con todo</p>
+                    <p><strong>$890</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🥑 Guacamole Fresco</h3>
+                    <p>Hecho al momento</p>
+                    <p><strong>$95</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🍗 Pollo Antioquia</h3>
+                    <p>½ pollo con guarniciones</p>
+                    <p><strong>$260</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🧀 Choriqueso</h3>
+                    <p>Chorizo con queso fundido</p>
+                    <p><strong>$145</strong></p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="foto">
+                    <h3>🌶️ Especialidades</h3>
+                    <p>Ceviche y chile relleno de chicharrón</p>
+                    <p><strong>Desde $140</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>ASADO AL BARRIL</h3>
+                    <p>Calz. de las Bombas 565, Coapa, Campestre Coyoacán</p>
+                    <p>Coyoacán, 04938 Ciudad de México, CDMX</p>
+                    <p>📞 Teléfono: (55) 1234-5678</p>
+                    <p>🕐 Horario: Lunes a Domingo 12:00 - 22:00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

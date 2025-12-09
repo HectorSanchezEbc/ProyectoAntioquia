@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIOQUIA - Contacto</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            background-color: white;
+            padding: 15px 10px;
+            border-bottom: 3px solid orange;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 120px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin: 0;
+            color: #666;
+        }
+        
+        /* ========== NAVEGACIÓN ========== */
+        nav {
+            background-color: lightgray;
+            padding: 10px 5px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover {
+            color: white;
+            background-color: orange;
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        main {
+            padding: 20px 15px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* ========== DESTACADO ========== */
+        .destacado {
+            background-color: orange;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* ========== CONTACTO INFO ========== */
+        .contacto-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid orange;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .contacto-info h3 {
+            color: orange;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .contacto-info p {
+            line-height: 1.8;
+            margin: 8px 0;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .contacto-info p strong {
+            color: #222;
+            font-size: 1.05rem;
+        }
+
+        .contacto-info a {
+            color: orange;
+            font-weight: bold;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .contacto-info a:hover {
+            color: darkorange;
+        }
+
+        /* Iconos de check */
+        .contacto-info p:before {
+            content: '';
+        }
+
+        /* ========== CALL TO ACTION ========== */
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-section h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .cta-section p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .cta-section .brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            color: orange;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* ========== MEDIA QUERIES ========== */
+        
+        /* Tablets y móviles grandes (hasta 768px) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            main {
+                padding: 15px 12px;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            .destacado {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            .contacto-info {
+                padding: 18px;
+            }
+
+            .contacto-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .contacto-info p {
+                font-size: 0.95rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.3rem;
+            }
+
+            footer h3 {
+                font-size: 1.2rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Móviles pequeños (hasta 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 8px;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            nav {
+                padding: 6px 3px;
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 6px 8px;
+            }
+
+            main {
+                padding: 12px 10px;
+            }
+
+            main h2 {
+                font-size: 1.3rem;
+            }
+
+            .destacado {
+                font-size: 0.95rem;
+                padding: 10px;
+                margin: 15px 0;
+            }
+
+            .contacto-info {
+                padding: 15px;
+                margin: 12px 0;
+            }
+
+            .contacto-info h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .contacto-info p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .cta-section {
+                padding: 20px 12px;
+            }
+
+            .cta-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .cta-section p {
+                font-size: 0.95rem;
+            }
+
+            .cta-section .brand {
+                font-size: 1.1rem;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+
+            footer h3 {
+                font-size: 1.1rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Móviles muy pequeños (hasta 360px) */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 70px;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+                padding: 5px 6px;
+            }
+
+            main h2 {
+                font-size: 1.2rem;
+            }
+
+            .destacado {
+                font-size: 0.9rem;
+            }
+
+            .contacto-info h3 {
+                font-size: 1rem;
+            }
+
+            .contacto-info p {
+                font-size: 0.85rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <img src="Logoantioquia.jpg" alt="Logo ANTIOQUIA" class="logo">
+        <h1>ANTIOQUIA</h1>
+        <p>Asado al Barril</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Menú</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    
+    <main>
+        <h2>Contáctanos</h2>
+        
+        <div class="destacado">
+            Sin Chicharrón no hay paraíso
+        </div>
+        
+        <div class="contacto-info">
+            <h3>📍 Ubicación</h3>
+            <p><strong>Calz. de las Bombas 565</strong></p>
+            <p>Coapa, Campestre Coyoacán</p>
+            <p>Coyoacán, 04938</p>
+            <p>Ciudad de México, CDMX</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Calz.+de+las+Bombas+565,+Coapa,+Campestre+Coyoacán,+Coyoacán,+04938+Ciudad+de+México,+CDMX" target="_blank">🗺️ Ver en Google Maps</a></p>
+        </div>
+        
+        <div class="contacto-info">
+            <h3>📞 Teléfono</h3>
+            <p><strong><a href="tel:5512345678">(55) 1234-5678</a></strong></p>
+            <p>Llámanos para hacer tu pedido</p>
+        </div>
+        
+        <div class="contacto-info">
+            <h3>🕐 Horarios de Atención</h3>
+            <p><strong>Lunes a Domingo</strong></p>
+            <p>12:00 PM - 10:00 PM</p>
+            <p>Servicio continuo</p>
+        </div>
+        
+        <div class="contacto-info">
+            <h3>🍽️ Servicios</h3>
+            <p>✅ Servicio en el restaurante</p>
+            <p>✅ Para llevar</p>
+            <p>✅ Pedidos por teléfono</p>
+            <p>✅ Charolas para eventos</p>
+        </div>
+        
+        <div class="contacto-info">
+            <h3>💳 Formas de Pago</h3>
+            <p>✅ Efectivo</p>
+            <p>✅ Tarjetas de crédito y débito</p>
+            <p>✅ Transferencias</p>
+        </div>
+        
+        <div class="cta-section">
+            <h3>¡Te esperamos!</h3>
+            <p>Ven a disfrutar del auténtico sabor colombiano</p>
+            <p class="brand">ASADO AL BARRIL</p>
+        </div>
+    </main>
+    
+    <footer>
+        <h3>ASADO AL BARRIL</h3>
+        <p>Calz. de las Bombas 565, Coapa, Campestre Coyoacán</p>
+        <p>Coyoacán, 04938 Ciudad de México, CDMX</p>
+        <p>📞 Teléfono: (55) 1234-5678</p>
+        <p>🕐 Horario: Lunes a Domingo 12:00 - 22:00</p>
+    </footer>
+    
+</body>
+</html>
